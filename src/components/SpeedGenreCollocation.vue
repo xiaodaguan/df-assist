@@ -138,12 +138,32 @@
             </el-radio-group>
           </el-form-item>
           <el-form-item size="small" label="徽章">
-            <el-radio-group v-model="form.badge">
-              <el-radio-button label=0.02>玲珑[2]</el-radio-button>
-              <el-radio-button label=0.015>灿烂[1.5]</el-radio-button>
-              <el-radio-button label=0.011>华丽[1.1]</el-radio-button>
+            <el-radio-group v-model="form.badgeMode">
+              <el-radio label="1" style="display: block">组合：
+                <el-tag type="primary">玲珑攻速[2]</el-tag> &nbsp; x &nbsp;
+                <el-input-number v-model="form.exquisiteBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
+                <el-tag type="primary">灿烂攻速[1.5]</el-tag> &nbsp; x &nbsp;
+                <el-input-number v-model="form.brightBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
+                <el-tag type="primary">华丽攻速[1.1]</el-tag> &nbsp; x &nbsp;
+                <el-input-number v-model="form.gorgeousBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
+              </el-radio>
+              <br/>
+              <el-radio label="2" style="display: block">
+                手动输入总和：
+                <el-input v-model="form.badgeTotalMan" style="width: 120px" size="small">
+                  <template #append>%</template>
+                </el-input>
+              </el-radio>
+
             </el-radio-group>
-            &nbsp; x &nbsp;<el-input-number v-model="form.badgeNum" label="数量" :min="0" :max="10"></el-input-number>
+
+
+            <!--            <el-radio-group v-model="form.badge">-->
+            <!--              <el-radio-button label=0.02>玲珑[2]</el-radio-button>-->
+            <!--              <el-radio-button label=0.015>灿烂[1.5]</el-radio-button>-->
+            <!--              <el-radio-button label=0.011>华丽[1.1]</el-radio-button>-->
+            <!--            </el-radio-group>-->
+            <!--            &nbsp; x &nbsp;<el-input-number v-model="form.badgeNum" label="数量" :min="0" :max="10"></el-input-number>-->
           </el-form-item>
           <el-form-item size="small" label="守护珠">
             <el-radio-group v-model="form.guardianBead">
@@ -207,7 +227,10 @@ export default {
           + Number(this.form.pet)
           + Number(this.form.petEquip)
           + Number(this.form.crest)
-          + Number(this.form.badge) * Number(this.form.badgeNum)
+
+          + (this.form.badgeMode === "1" ? (Number(this.form.exquisiteBadgeNum) * 0.02 + Number(this.form.brightBadgeNum) * 0.015 + Number(
+              this.form.gorgeousBadgeNum) * 0.011) : Number(this.form.badgeTotalMan) / 100)
+
           + Number(this.form.guardianBead)
           + Number(this.form.weaponDressUp)
           + (Number(this.form.dressUp) > 0 ? Number(this.form.dressUp) : Number(this.form.dressUpMan) / 100)
@@ -233,8 +256,11 @@ export default {
         "pet": 0.05,
         "petEquip": 0.04,
         "crest": 0,
-        "badge": 0.011,
-        "badgeNum": 4,
+        "exquisiteBadgeNum": 0,
+        "badgeMode": "1",
+        "brightBadgeNum": 0,
+        "gorgeousBadgeNum": 4,
+        "badgeTotalMan": 4.4,
         "guardianBead": 0.03,
         "weaponDressUp": 0.04,
         "dressUp": 0.16,
@@ -248,5 +274,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
