@@ -58,8 +58,8 @@
             <el-radio-group v-model="form.bracelet">
               <el-radio-button label=0.08>耐久手[8]</el-radio-button>
               <el-radio-button label=0.08>半血手[8]</el-radio-button>
-              <el-radio-button label=0.3>自定义[30]</el-radio-button>
-              <el-radio-button label=0.38>自定义+8[38]</el-radio-button>
+              <el-radio-button label=0.3>恩特[30]</el-radio-button>
+              <el-radio-button label=0.38>恩特+8[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
