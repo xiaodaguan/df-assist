@@ -56,8 +56,7 @@
           <el-divider>首饰</el-divider>
           <el-form-item size="small" label="手镯">
             <el-radio-group v-model="form.bracelet">
-              <el-radio-button label=0.08>耐久手[8]</el-radio-button>
-              <el-radio-button label=0.08>半血手[8]</el-radio-button>
+              <el-radio-button label=0.08>耐久手|半血手[8]</el-radio-button>
               <el-radio-button label=0.3>恩特[30]</el-radio-button>
               <el-radio-button label=0.38>恩特+8[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
@@ -68,8 +67,8 @@
             <el-radio-group v-model="form.necklace">
               <el-radio-button label=0.15>原子核(250属强)[15]</el-radio-button>
               <el-radio-button label=0.5>近战项链[50]</el-radio-button>
-              <el-radio-button label=0.2>低血项链(半血触发)[20]</el-radio-button>
-              <el-radio-button label=0.2>前冲项链(前冲3秒)[20]</el-radio-button>
+              <el-radio-button label=0.2>低血项链(半血触发)|前冲项链(前冲3秒)[20]</el-radio-button>
+              <el-radio-button label=0.2></el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -95,9 +94,8 @@
 
           <el-form-item size="small" label="魔法石">
             <el-radio-group v-model="form.magicStone">
-              <el-radio-button label=0.15>宠物[15]</el-radio-button>
               <el-radio-button label=0.08>破招[8]</el-radio-button>
-              <el-radio-button label=0.15>吞噬黑暗[15]</el-radio-button>
+              <el-radio-button label=0.15>宠物|吞噬黑暗(不挨揍)[15]</el-radio-button>
               <el-radio-button label=0.3>吞噬黑暗(挨揍)[30]</el-radio-button>
               <el-radio-button label=0.0>其他</el-radio-button>
             </el-radio-group>
@@ -119,7 +117,7 @@
           </el-form-item>
           <el-form-item size="small" label="宠物">
             <el-radio-group v-model="form.pet">
-              <el-radio-button label=0.05>春季/夏日[5]</el-radio-button>
+              <el-radio-button label=0.05>春节|夏日[5]</el-radio-button>
               <el-radio-button label=0.04>其他弱鸡[4]</el-radio-button>
               <el-radio-button label=0>无</el-radio-button>
             </el-radio-group>
@@ -155,7 +153,7 @@
           <el-form-item size="small" label="武器装扮">
             <el-radio-group v-model="form.weaponDressUp">
               <el-radio-button label=0.04>普通[4]</el-radio-button>
-              <el-radio-button label=0>稀有/无[0]</el-radio-button>
+              <el-radio-button label=0>稀有|无[0]</el-radio-button>
             </el-radio-group>
           </el-form-item>
           <el-form-item size="small" label="装扮">
