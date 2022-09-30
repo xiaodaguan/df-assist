@@ -68,7 +68,6 @@
               <el-radio-button label=0.15>原子核(250属强)[15]</el-radio-button>
               <el-radio-button label=0.5>近战项链[50]</el-radio-button>
               <el-radio-button label=0.2>低血项链(半血触发)|前冲项链(前冲3秒)[20]</el-radio-button>
-              <el-radio-button label=0.2></el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -131,7 +130,7 @@
           <el-form-item size="small" label="快捷栏装备">
             <el-radio-group v-model="form.crest">
               <el-radio-button label=0.08>出血纹章[8]</el-radio-button>
-              <el-radio-button label=0.05>蓝蓝/粉粉海豚[5]</el-radio-button>
+              <el-radio-button label=0.05>蓝蓝|粉粉海豚[5]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
