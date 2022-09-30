@@ -164,6 +164,12 @@
               <el-radio-button label=0.19>龙袍*3(脸胸)+天空*5[19]</el-radio-button>
               <el-radio-button label=0.16>天空*8[16]</el-radio-button>
               <el-radio-button label=0.12>节日套[12]</el-radio-button>
+              <el-radio>
+                手动输入
+                <el-input v-model="form.dressUpMan" style="width: 120px" size="small">
+                  <template #append>%</template>
+                </el-input>
+              </el-radio>
             </el-radio-group>
           </el-form-item>
           <el-form-item size="small" label="辟邪玉">
@@ -204,7 +210,7 @@ export default {
           + Number(this.form.badge) * Number(this.form.badgeNum)
           + Number(this.form.guardianBead)
           + Number(this.form.weaponDressUp)
-          + Number(this.form.dressUp)
+          + (Number(this.form.dressUp) > 0 ? Number(this.form.dressUp) : Number(this.form.dressUpMan) / 100)
           + Number(Number(this.form.jade) / 100)
       ) * 100).toFixed(1);
     }
@@ -232,6 +238,7 @@ export default {
         "guardianBead": 0.03,
         "weaponDressUp": 0.04,
         "dressUp": 0.16,
+        "dressUpMan": 16,
         "jade": 0,
       }
     }

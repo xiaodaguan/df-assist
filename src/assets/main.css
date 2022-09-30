@@ -20,7 +20,7 @@ a,
   }
 }
 
-@media {
+@media (min-width: 2560px){
   body {
     display: flex;
     place-items: center;
