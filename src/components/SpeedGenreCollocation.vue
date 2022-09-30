@@ -24,7 +24,7 @@
           <el-form-item size="small" label="胸">
             <el-radio-group v-model="form.coat">
               <el-radio-button label=0.1>大地馈赠(火)[10]</el-radio-button>
-              <el-radio-button label=0.08>草人[8]</el-radio-button>
+              <el-radio-button label=0.08>暗影流光[8]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -33,8 +33,8 @@
               <el-radio-button label=0.45>星灭光离(99火抗)[45]</el-radio-button>
               <el-radio-button label=0.40>星灭光离(88火抗)[40]</el-radio-button>
               <el-radio-button label=0.35>星灭光离(77火抗)[35]</el-radio-button>
-              <el-radio-button label=0.3>星灭光离(66火抗)|深潜[30]</el-radio-button>
-              <el-radio-button label=0.38>深潜+8[38]</el-radio-button>
+              <el-radio-button label=0.3>星灭光离(66火抗)|深潜自定义[30]</el-radio-button>
+              <el-radio-button label=0.38>深潜自定义+8[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -44,7 +44,7 @@
               <el-radio-button label=0.2>增幅裤子+10[20]</el-radio-button>
               <el-radio-button label=0.22>增幅裤子+11[22]</el-radio-button>
               <el-radio-button label=0.24>增幅裤子+12[24]</el-radio-button>
-              <el-radio-button label=0.38>梵塔[38]</el-radio-button>
+              <el-radio-button label=0.38>梵塔基础裤子[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -58,9 +58,9 @@
           <el-divider>首饰</el-divider>
           <el-form-item size="small" label="手镯">
             <el-radio-group v-model="form.bracelet">
-              <el-radio-button label=0.08>耐久手|半血手[8]</el-radio-button>
-              <el-radio-button label=0.3>恩特[30]</el-radio-button>
-              <el-radio-button label=0.38>恩特+8[38]</el-radio-button>
+              <el-radio-button label=0.08>收获之手|动力导航包[8]</el-radio-button>
+              <el-radio-button label=0.3>恩特自定义[30]</el-radio-button>
+              <el-radio-button label=0.38>恩特自定义+8[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -68,8 +68,8 @@
           <el-form-item size="small" label="项链">
             <el-radio-group v-model="form.necklace">
               <el-radio-button label=0.15>原子核(250属强)[15]</el-radio-button>
-              <el-radio-button label=0.5>近战项链[50]</el-radio-button>
-              <el-radio-button label=0.2>低血项链(半血触发)|前冲项链(前冲3秒)[20]</el-radio-button>
+              <el-radio-button label=0.5>脉冲触发器[50]</el-radio-button>
+              <el-radio-button label=0.2>黯星(半血触发)|骑士的赎罪(前冲3秒)[20]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -86,17 +86,18 @@
           <el-divider>特殊</el-divider>
           <el-form-item size="small" label="辅助">
             <el-radio-group v-model="form.auxiliary">
-              <el-radio-button label=0.05>品级[5]</el-radio-button>
-              <el-radio-button label=0.25>挖掘机[25]</el-radio-button>
-              <el-radio-button label=0.08>低血[8]</el-radio-button>
+              <el-radio-button label=0.05>光学眼镜｜挖掘机(1层)[5]</el-radio-button>
+              <el-radio-button label=0.15>挖掘机(3层)[15]</el-radio-button>
+              <el-radio-button label=0.25>挖掘机(满)[25]</el-radio-button>
+              <el-radio-button label=0.08>生命的喘息[8]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
 
           <el-form-item size="small" label="魔法石">
             <el-radio-group v-model="form.magicStone">
-              <el-radio-button label=0.08>破招[8]</el-radio-button>
-              <el-radio-button label=0.15>宠物|吞噬黑暗(不挨揍)[15]</el-radio-button>
+              <el-radio-button label=0.08>诅咒之心[8]</el-radio-button>
+              <el-radio-button label=0.15>逆流之魂(20宠物)|吞噬黑暗(不挨揍)[15]</el-radio-button>
               <el-radio-button label=0.3>吞噬黑暗(挨揍)[30]</el-radio-button>
               <el-radio-button label=0.0>其他</el-radio-button>
             </el-radio-group>
