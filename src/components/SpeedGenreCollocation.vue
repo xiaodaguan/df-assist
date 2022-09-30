@@ -31,7 +31,9 @@
           <el-form-item size="small" label="腰">
             <el-radio-group v-model="form.belt">
               <el-radio-button label=0.45>星灭光离(99火抗)[45]</el-radio-button>
-              <el-radio-button label=0.3>深潜[30]</el-radio-button>
+              <el-radio-button label=0.40>星灭光离(88火抗)[40]</el-radio-button>
+              <el-radio-button label=0.35>星灭光离(77火抗)[35]</el-radio-button>
+              <el-radio-button label=0.3>星灭光离(66火抗)|深潜[30]</el-radio-button>
               <el-radio-button label=0.38>深潜+8[38]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
