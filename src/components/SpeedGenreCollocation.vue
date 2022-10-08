@@ -25,6 +25,7 @@
             <el-radio-group v-model="form.coat">
               <el-radio-button label=0.1>大地馈赠(火)[10]</el-radio-button>
               <el-radio-button label=0.08>暗影流光[8]</el-radio-button>
+              <el-radio-button label=0.05>双面星云皮大衣[5]</el-radio-button>
               <el-radio-button label=0>其他</el-radio-button>
             </el-radio-group>
           </el-form-item>
