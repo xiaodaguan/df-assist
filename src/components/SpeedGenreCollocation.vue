@@ -2,7 +2,6 @@
 
   <div>
 
-
     <el-row>
       <el-col :span="4">
         <el-affix :offset="120">
@@ -12,6 +11,11 @@
       </el-col>
       <el-col :span="20">
         <el-form :model="form">
+          <el-descriptions title="">
+            <el-descriptions-item>
+              有啥意见建议，可以到C站留言给我：<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">C站帖子</a>
+            </el-descriptions-item>
+          </el-descriptions>
           <el-divider>防具</el-divider>
           <el-form-item size="small" label="肩膀">
             <el-radio-group v-model="form.shoulder">
