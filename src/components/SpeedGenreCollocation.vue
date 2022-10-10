@@ -13,7 +13,7 @@
         <el-form :model="form">
           <el-descriptions title="">
             <el-descriptions-item>
-              有啥意见建议，可以到C站留言给我：<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">C站帖子</a>
+              有啥意见建议，可以到C站留言给我 &#128540; ...<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">传送门</a>
             </el-descriptions-item>
           </el-descriptions>
           <el-divider>防具</el-divider>
