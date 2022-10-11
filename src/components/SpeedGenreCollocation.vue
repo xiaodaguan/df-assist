@@ -17,145 +17,181 @@
             </el-descriptions-item>
           </el-descriptions>
           <el-divider>防具</el-divider>
-          <el-form-item size="small" label="肩膀">
+          <el-form-item label="肩膀">
             <el-radio-group v-model="form.shoulder">
-              <el-radio-button label=0.1>绽放的自然生命(冰)[10%]</el-radio-button>
-              <el-radio-button label=0.08>猎龙[8%]</el-radio-button>
-              <el-radio-button label=0.3>自由之翼(火)[30%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.shoulder" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item size="small" label="胸">
+          <el-form-item label="胸">
             <el-radio-group v-model="form.coat">
-              <el-radio-button label=0.1>大地馈赠(火)[10%]</el-radio-button>
-              <el-radio-button label=0.08>暗影流光|蓝灵自定义[8%]</el-radio-button>
-              <el-radio-button label=0.05>双面星云皮大衣[5%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.coat" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
-          <el-form-item size="small" label="腰">
+          <el-form-item label="腰">
             <el-radio-group v-model="form.belt">
-              <el-radio-button label=0.45>星灭光离(99火抗)[45%]</el-radio-button>
-              <el-radio-button label=0.40>星灭光离(88火抗)[40%]</el-radio-button>
-              <el-radio-button label=0.35>星灭光离(77火抗)[35%]</el-radio-button>
-              <el-radio-button label=0.3>星灭光离(66火抗)|深潜自定义[30%]</el-radio-button>
-              <el-radio-button label=0.38>深潜自定义+8[38%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.belt" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
 
-          <el-form-item size="small" label="下装">
+          <el-form-item label="下装">
             <el-radio-group v-model="form.trousers">
-              <el-radio-button label=0.2>增幅裤子+10[20%]</el-radio-button>
-              <el-radio-button label=0.22>增幅裤子+11[22%]</el-radio-button>
-              <el-radio-button label=0.24>增幅裤子+12[24%]</el-radio-button>
-              <el-radio-button label=0.38>梵塔基础裤子[38%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.trousers" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
 
-          <el-form-item size="small" label="鞋">
+          <el-form-item label="鞋">
             <el-radio-group v-model="form.shoes">
-              <el-radio-button label=0>攻速鞋</el-radio-button>
+              <el-radio-button label=0 disabled="true">攻速鞋</el-radio-button>
             </el-radio-group>
           </el-form-item>
 
           <el-divider>首饰</el-divider>
-          <el-form-item size="small" label="手镯">
+          <el-form-item label="手镯">
+
             <el-radio-group v-model="form.bracelet">
-              <el-radio-button label=0.08>收获之手|动力导航包[8%]</el-radio-button>
-              <el-radio-button label=0.3>恩特自定义[30%]</el-radio-button>
-              <el-radio-button label=0.38>恩特自定义+8[38%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.bracelet" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
 
-          <el-form-item size="small" label="项链">
+          <el-form-item label="项链">
+
             <el-radio-group v-model="form.necklace">
-              <el-radio-button label=0.15>原子核(250属强)[15%]</el-radio-button>
-              <el-radio-button label=0.5>脉冲触发器[50%]</el-radio-button>
-              <el-radio-button label=0.2>黯星(半血触发)|骑士的赎罪(前冲3秒)[20%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.necklace" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
 
-          <el-form-item size="small" label="戒指">
+          <el-form-item label="戒指">
             <el-radio-group v-model="form.ring">
-              <el-radio-button label=0.08>双音(1球)[8%]</el-radio-button>
-              <el-radio-button label=0.16>双音(2球)[16%]</el-radio-button>
-              <el-radio-button label=0.24>双音(3球)[24%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.ring" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
 
           <el-divider>特殊</el-divider>
-          <el-form-item size="small" label="辅助">
+          <el-form-item label="左槽">
+
             <el-radio-group v-model="form.auxiliary">
-              <el-radio-button label=0.05>光学眼镜｜挖掘机(1层)[5%]</el-radio-button>
-              <el-radio-button label=0.15>挖掘机(3层)[15%]</el-radio-button>
-              <el-radio-button label=0.25>挖掘机(满)[25%]</el-radio-button>
-              <el-radio-button label=0.08>生命的喘息[8%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.auxiliary" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
 
-          <el-form-item size="small" label="魔法石">
+          <el-form-item label="魔法石">
+
+
             <el-radio-group v-model="form.magicStone">
-              <el-radio-button label=0.08>诅咒之心[8%]</el-radio-button>
-              <el-radio-button label=0.15>逆流之魂(20宠物)|吞噬黑暗(不挨揍)[15%]</el-radio-button>
-              <el-radio-button label=0.3>吞噬黑暗(挨揍)[30%]</el-radio-button>
-              <el-radio-button label=0.0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.magicStone" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
 
-          <el-form-item size="small" label="耳环">
+          <el-form-item label="耳环">
             <el-radio-group v-model="form.earrings">
-              <el-radio-button label=0.08>冰晶[8%]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.earrings" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
 
           <el-divider>特色</el-divider>
-          <el-form-item size="small" label="称号">
+
+
+          <el-form-item label="称号">
             <el-radio-group v-model="form.title">
-              <el-radio-button label=0.04>至尊[4%]</el-radio-button>
-              <el-radio-button label=0.03>普通[3%]</el-radio-button>
+              <el-radio-button v-for="item in preset.title" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item size="small" label="宠物">
+          <el-form-item label="宠物">
             <el-radio-group v-model="form.pet">
-              <el-radio-button label=0.05>春节|夏日[5%]</el-radio-button>
-              <el-radio-button label=0.04>其他弱鸡[4%]</el-radio-button>
-              <el-radio-button label=0>无</el-radio-button>
+              <el-radio-button v-for="item in preset.pet" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
           </el-form-item>
-          <el-form-item size="small" label="4速蓝宠装">
+          <el-form-item label="蓝宠装">
             <el-radio-group v-model="form.petEquip">
-              <el-radio-button label=0.04>有[4%]</el-radio-button>
-              <el-radio-button label=0>无</el-radio-button>
+              <el-radio-button v-for="item in preset.petEquip" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
-          <el-form-item size="small" label="快捷栏装备">
+          <el-form-item label="快捷栏装备">
+
             <el-radio-group v-model="form.crest">
-              <el-radio-button label=0.08>出血纹章[8]</el-radio-button>
-              <el-radio-button label=0.05>蓝蓝|粉粉海豚[5]</el-radio-button>
-              <el-radio-button label=0>其他</el-radio-button>
+              <el-radio-button v-for="item in preset.crest" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
-          <el-form-item size="small" label="徽章">
+
+          <el-form-item label="徽章">
             <el-radio-group v-model="form.badgeMode">
-              <el-radio label="1" style="display: block">组合：
-                <el-tag type="primary">玲珑攻速[2%]</el-tag> &nbsp; x &nbsp;
+              <el-radio label="1" style="display: block" border="border">
+                <el-tag type="primary">玲珑攻速<font size="1">[2%]</font></el-tag> &nbsp; x &nbsp;
                 <el-input-number v-model="form.exquisiteBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
-                <el-tag type="primary">灿烂攻速[1.5%]</el-tag> &nbsp; x &nbsp;
+                <el-tag type="primary">灿烂攻速<font size="1">[1.5%]</font></el-tag> &nbsp; x &nbsp;
                 <el-input-number v-model="form.brightBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
-                <el-tag type="primary">华丽攻速[1.1%]</el-tag> &nbsp; x &nbsp;
+                <el-tag type="primary">华丽攻速<font size="1">[1.1%]</font></el-tag> &nbsp; x &nbsp;
                 <el-input-number v-model="form.gorgeousBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
               </el-radio>
               <br/>
-              <el-radio label="2" style="display: block">
+              <el-radio label="2" style="display: block" border="border">
                 手动输入总和：
-                <el-input v-model="form.badgeTotalMan" style="width: 120px" size="small">
+                <el-input v-model=" form.badgeTotalMan
+              " style="width: 120px">
                   <template #append>%</template>
                 </el-input>
               </el-radio>
@@ -163,41 +199,46 @@
             </el-radio-group>
 
 
-            <!--            <el-radio-group v-model="form.badge">-->
-            <!--              <el-radio-button label=0.02>玲珑[2]</el-radio-button>-->
-            <!--              <el-radio-button label=0.015>灿烂[1.5]</el-radio-button>-->
-            <!--              <el-radio-button label=0.011>华丽[1.1]</el-radio-button>-->
-            <!--            </el-radio-group>-->
-            <!--            &nbsp; x &nbsp;<el-input-number v-model="form.badgeNum" label="数量" :min="0" :max="10"></el-input-number>-->
           </el-form-item>
-          <el-form-item size="small" label="守护珠">
+          <el-form-item label="守护珠">
             <el-radio-group v-model="form.guardianBead">
-              <el-radio-button label=0.03>神器[3%]</el-radio-button>
-              <el-radio-button label=0.024>稀有[2.4%]</el-radio-button>
-              <el-radio-button label=0>无</el-radio-button>
+              <el-radio-button v-for="item in preset.guardianBead" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
+
           </el-form-item>
-          <el-form-item size="small" label="武器装扮">
+          <el-form-item label="武器装扮">
             <el-radio-group v-model="form.weaponDressUp">
-              <el-radio-button label=0.04>普通[4%]</el-radio-button>
-              <el-radio-button label=0>稀有|无[0%]</el-radio-button>
+              <el-radio-button v-for="item in preset.weaponDressUp" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
             </el-radio-group>
+
           </el-form-item>
-          <el-form-item size="small" label="装扮">
+          <el-form-item label="装扮">
+
             <el-radio-group v-model="form.dressUp">
-              <el-radio-button label=0.2>龙袍*8[20%]</el-radio-button>
-              <el-radio-button label=0.19>龙袍*3(脸胸)+天空*5[19%]</el-radio-button>
-              <el-radio-button label=0.16>天空*8[16%]</el-radio-button>
-              <el-radio-button label=0.12>节日套[12%]</el-radio-button>
-              <el-radio>
-                手动输入
-                <el-input v-model="form.dressUpMan" style="width: 120px" size="small">
+              <el-radio-button v-for="item in preset.dressUp" :label="item.value">
+                {{ item.name }}
+                <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                [{{ item.value * 100 }}%]
+              </el-radio-button>
+              <el-radio style="display: block" border="border">
+                手动输入：
+                <el-input v-model="form.dressUpMan" style="width: 120px">
                   <template #append>%</template>
                 </el-input>
               </el-radio>
             </el-radio-group>
+
           </el-form-item>
-          <el-form-item size="small" label="辟邪玉">
+          <el-form-item label="辟邪玉">
             <el-input v-model="form.jade" placeholder="手动输入" style="width: 120px">
               <template #append>%</template>
             </el-input>
@@ -245,6 +286,45 @@ export default {
   },
   data() {
     return {
+      "preset": {
+        "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
+          {"name": "自由之翼", "value": 0.3, "desc": "火强"}, {"name": "其他", "value": 0}],
+        "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜蓝灵8速", "value": 0.08},
+          {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
+        "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
+          {"name": "星灭光离(7)", "value": 0.35, "desc": "77+火抗"}, {"name": "星灭光离(6)|深潜30速", "value": 0.3, "desc": "66+火抗"},
+          {"name": "深潜30速+8速", "value": 0.38}, {"name": "其他", "value": 0}],
+        "trousers": [{"name": "机械装甲", "value": 0.2, "desc": "+10"}, {"name": "机械装甲", "value": 0.22, "desc": "+11"},
+          {"name": "机械装甲", "value": 0.24, "desc": "+12"}, {"name": "梵塔", "value": 0.38, "desc": "基础流"}, {"name": "其他", "value": 0}],
+        "shoes": 0,
+        "bracelet": [{"name": "收获之手｜动力导航包", "value": 0.08}, {"name": "恩特30速", "value": 0.3}, {"name": "恩特30速+8速", "value": 0.38},
+          {"name": "其他", "value": 0}],
+        "necklace": [{"name": "原子核", "value": 0.15, "desc": "250+属强"}, {"name": "脉冲", "value": 0.5},
+          {"name": "黯星｜骑士", "value": 0.2, "desc": "半血｜前冲3秒"}, {"name": "其他", "value": 0}],
+        "ring": [{"name": "双音1", "value": 0.08, "desc": "吃1球"}, {"name": "双音2", "value": 0.16, "desc": "吃2球"},
+          {"name": "双音3", "value": 0.24, "desc": "吃3球"}, {"name": "其他", "value": 0}],
+        "auxiliary": [{"name": "光学眼镜｜挖掘机", "value": 0.05, "desc": "品级900｜1层"}, {"name": "挖掘机", "value": 0.15, "desc": "3层"},
+          {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
+        "magicStone": [{"name": "诅咒之心", "value": 0.08}, {"name": "逆流之魂｜吞噬黑暗", "value": 0.15, "desc": "20+宠物｜不挨揍"},
+          {"name": "吞噬黑暗", "value": 0.3, "desc": "挨揍"}, {"name": "其他", "value": 0}],
+        "earrings": [{"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
+        "title": [{"name": "至尊", "value": 0.04}, {"name": "普通", "value": 0.03}],
+        "pet": [{"name": "春节｜夏日", "value": 0.05}, {"name": "其他", "value": 0.04}, {"name": "无", "value": 0}],
+        "petEquip": [{"name": "4速", "value": 0.04}, {"name": "1速", "value": 0.01}, {"name": "无", "value": 0}],
+        "crest": [{"name": "神圣符咒(飓风)", "value": 0.08, "desc": "出血纹章"}, {"name": "蓝蓝海豚｜粉粉海豚", "value": 0.05, "desc": "21夏日"},
+          {"name": "其他", "value": 0}],
+        "exquisiteBadgeNum": 0,
+        "badgeMode": "1",
+        "brightBadgeNum": 0,
+        "gorgeousBadgeNum": 4,
+        "badgeTotalMan": 4.4,
+        "guardianBead": [{"name": "神器", "value": 0.03}, {"name": "稀有", "value": 0.024}, {"name": "其他", "value": 0}],
+        "weaponDressUp": [{"name": "克隆", "value": 0.04, "desc": "三速"}, {"name": "稀有克隆", "value": 0, "desc": "四维+技能lv"}],
+        "dressUp": [{"name": "龙袍8", "value": 0.2}, {"name": "龙袍3+稀有天空5", "value": 0.19, "desc": "脸+胸+任一"},
+          {"name": "稀有天空8", "value": 0.16}, {"name": "节日套", "value": 0.12}],
+        "dressUpMan": 16,
+        "jade": 0
+      },
       "form": {
         "shoulder": 0,
         "coat": 0.08,
@@ -271,7 +351,8 @@ export default {
         "dressUp": 0.16,
         "dressUpMan": 16,
         "jade": 0,
-      }
+      },
+
     }
   },
 
@@ -279,4 +360,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
