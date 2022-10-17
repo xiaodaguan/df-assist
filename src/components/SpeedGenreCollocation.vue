@@ -4,18 +4,27 @@
 
     <el-row>
       <el-col :span="4">
-        <el-affix :offset="120">
-          <el-result v-show="getSum()>=140" :title="getSum()+'%'" sub-title="合计攻速" icon="success"></el-result>
-          <el-result v-show="getSum()<140" :title="getSum()+'%'" sub-title="合计攻速" icon="error"></el-result>
-        </el-affix>
+        <div>
+
+          <el-affix :offset="120">
+            <el-result v-show="getSum()>=140" :title="getSum()+'%'" sub-title="合计攻速" icon="success"></el-result>
+            <el-result v-show="getSum()<140" :title="getSum()+'%'" sub-title="合计攻速" icon="error"></el-result>
+          </el-affix>
+        </div>
+
       </el-col>
       <el-col :span="20">
+
         <el-form :model="form">
           <el-descriptions title="">
             <el-descriptions-item>
               有啥意见建议，可以到C站留言给我 &#128540; ...<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">传送门</a>
             </el-descriptions-item>
           </el-descriptions>
+
+          <el-button @click="this.form = pre1">预设1：双尊｜龙袍+12｜玲珑攻速｜升级武器装扮</el-button>
+          <el-button @click="this.form = pre2">预设2：红10天空</el-button>
+
           <el-divider>防具</el-divider>
           <el-form-item label="肩膀">
             <el-radio-group v-model="form.shoulder">
@@ -288,7 +297,8 @@ export default {
     return {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
-          {"name": "自由之翼", "value": 0.3, "desc": "火强"}, {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc":"⚠️⚠️自身异常触发⚠️⚠️"}, {"name": "其他", "value": 0}],
+          {"name": "自由之翼", "value": 0.3, "desc": "火强"},
+          {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "⚠️⚠️自身异常触发⚠️⚠️"}, {"name": "其他", "value": 0}],
         "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
@@ -307,9 +317,10 @@ export default {
           {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08}, {"name": "逆流之魂｜吞噬黑暗", "value": 0.15, "desc": "20+宠物｜不挨揍"},
           {"name": "吞噬黑暗", "value": 0.3, "desc": "挨揍"}, {"name": "其他", "value": 0}],
-        "earrings": [{"name": "战术信号弹", "value": 0.3,"desc":"⚠️⚠停手每秒-4%⚠️⚠"},{"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
+        "earrings": [{"name": "战术信号弹", "value": 0.3, "desc": "⚠️⚠停手每秒-4%⚠️⚠"}, {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
         "title": [{"name": "至尊", "value": 0.04}, {"name": "普通", "value": 0.03}],
-        "pet": [{"name": "春节｜夏日(升级)", "value": 0.05}, {"name": "夏日(未升级)", "value": 0.03}, {"name": "其他", "value": 0.04}, {"name": "无", "value": 0}],
+        "pet": [{"name": "春节｜夏日(升级)", "value": 0.05}, {"name": "夏日(未升级)", "value": 0.03}, {"name": "其他", "value": 0.04},
+          {"name": "无", "value": 0}],
         "petEquip": [{"name": "4速", "value": 0.04}, {"name": "1速", "value": 0.01}, {"name": "无", "value": 0}],
         "crest": [{"name": "神圣符咒(飓风)", "value": 0.08, "desc": "出血纹章"}, {"name": "蓝蓝海豚｜粉粉海豚", "value": 0.05, "desc": "21夏日"},
           {"name": "其他", "value": 0}],
@@ -352,6 +363,60 @@ export default {
         "dressUpMan": 16,
         "jade": 0,
       },
+      "pre1":{
+        "shoulder": 0,
+        "coat": 0.08,
+        "belt": 0.45,
+        "trousers": 0.24,
+        "shoes": 0,
+        "bracelet": 0,
+        "necklace": 0.15,
+        "ring": 0,
+        "auxiliary": 0.05,
+        "magicStone": 0.08,
+        "earrings": 0,
+        "title": 0.04,
+        "pet": 0.05,
+        "petEquip": 0.04,
+        "crest": 0,
+        "exquisiteBadgeNum": 4,
+        "badgeMode": "1",
+        "brightBadgeNum": 0,
+        "gorgeousBadgeNum": 0,
+        "badgeTotalMan": 4.4,
+        "guardianBead": 0.03,
+        "weaponDressUp": 0,
+        "dressUp": 0.2,
+        "dressUpMan": 16,
+        "jade": 0,
+      },
+      "pre2":{
+        "shoulder": 0,
+        "coat": 0.08,
+        "belt": 0.45,
+        "trousers": 0.2,
+        "shoes": 0,
+        "bracelet": 0,
+        "necklace": 0.15,
+        "ring": 0,
+        "auxiliary": 0.05,
+        "magicStone": 0.08,
+        "earrings": 0,
+        "title": 0.03,
+        "pet": 0.05,
+        "petEquip": 0.04,
+        "crest": 0,
+        "exquisiteBadgeNum": 0,
+        "badgeMode": "1",
+        "brightBadgeNum": 0,
+        "gorgeousBadgeNum": 4,
+        "badgeTotalMan": 4.4,
+        "guardianBead": 0.03,
+        "weaponDressUp": 0.04,
+        "dressUp": 0.16,
+        "dressUpMan": 16,
+        "jade": 0,
+      }
 
     }
   },
