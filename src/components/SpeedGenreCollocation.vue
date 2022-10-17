@@ -289,7 +289,7 @@ export default {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
           {"name": "自由之翼", "value": 0.3, "desc": "火强"}, {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc":"⚠️⚠️自身异常触发⚠️⚠️"}, {"name": "其他", "value": 0}],
-        "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜蓝灵8速", "value": 0.08},
+        "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
           {"name": "星灭光离(7)", "value": 0.35, "desc": "77+火抗"}, {"name": "星灭光离(6)|深潜30速", "value": 0.3, "desc": "66+火抗"},
