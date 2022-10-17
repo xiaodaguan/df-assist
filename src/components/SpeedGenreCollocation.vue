@@ -288,7 +288,7 @@ export default {
     return {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
-          {"name": "自由之翼", "value": 0.3, "desc": "火强"}, {"name": "其他", "value": 0}],
+          {"name": "自由之翼", "value": 0.3, "desc": "火强"}, {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc":"⚠️⚠️自身异常触发⚠️⚠️"}, {"name": "其他", "value": 0}],
         "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
@@ -307,9 +307,9 @@ export default {
           {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08}, {"name": "逆流之魂｜吞噬黑暗", "value": 0.15, "desc": "20+宠物｜不挨揍"},
           {"name": "吞噬黑暗", "value": 0.3, "desc": "挨揍"}, {"name": "其他", "value": 0}],
-        "earrings": [{"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
+        "earrings": [{"name": "战术信号弹", "value": 0.3,"desc":"⚠️⚠停手每秒-4%⚠️⚠"},{"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
         "title": [{"name": "至尊", "value": 0.04}, {"name": "普通", "value": 0.03}],
-        "pet": [{"name": "春节｜夏日", "value": 0.05}, {"name": "其他", "value": 0.04}, {"name": "无", "value": 0}],
+        "pet": [{"name": "春节｜夏日(升级)", "value": 0.05}, {"name": "夏日(未升级)", "value": 0.03}, {"name": "其他", "value": 0.04}, {"name": "无", "value": 0}],
         "petEquip": [{"name": "4速", "value": 0.04}, {"name": "1速", "value": 0.01}, {"name": "无", "value": 0}],
         "crest": [{"name": "神圣符咒(飓风)", "value": 0.08, "desc": "出血纹章"}, {"name": "蓝蓝海豚｜粉粉海豚", "value": 0.05, "desc": "21夏日"},
           {"name": "其他", "value": 0}],
@@ -321,7 +321,7 @@ export default {
         "guardianBead": [{"name": "神器", "value": 0.03}, {"name": "稀有", "value": 0.024}, {"name": "其他", "value": 0}],
         "weaponDressUp": [{"name": "克隆", "value": 0.04, "desc": "三速"}, {"name": "稀有克隆", "value": 0, "desc": "四维+技能lv"}],
         "dressUp": [{"name": "龙袍8", "value": 0.2}, {"name": "龙袍3+稀有天空5", "value": 0.19, "desc": "脸+胸+任一"},
-          {"name": "稀有天空8", "value": 0.16}, {"name": "节日套", "value": 0.12}],
+          {"name": "稀有天空8", "value": 0.16}, {"name": "节日套", "value": 0.13}],
         "dressUpMan": 16,
         "jade": 0
       },
