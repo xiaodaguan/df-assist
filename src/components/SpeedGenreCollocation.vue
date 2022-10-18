@@ -15,7 +15,7 @@
     <el-row>
       <!-- 左：结果 -->
       <el-col :span="4">
-        <el-affix >
+        <el-affix>
           <el-row>
             <el-result v-show="getSum()>=140" :title="getSum()+'%'" sub-title="合计攻速" icon="success"></el-result>
             <el-result v-show="getSum()<140" :title="getSum()+'%'" sub-title="合计攻速" icon="error"></el-result>
@@ -308,9 +308,10 @@
         <el-row>
 
           <el-descriptions column="1">
-            <el-descriptions-item label="(1) 攻速鞋说明">
+            <el-descriptions-item label="攻速鞋说明">
+              <el-image src="https://gldq123.com/wp-content/uploads/2022/10/frc-bd5ec0a8031828262df8bd328ce68572.png" style="width: 100%"></el-image>
               <br/>
-              包括：<br/>
+              - 包括：<br/>
               <el-tag type="success">防具✅</el-tag>
               <el-tag type="success">首饰✅</el-tag>
               <el-tag type="success">特殊装备✅</el-tag>
@@ -322,22 +323,21 @@
               <el-tag type="success">快捷栏装备✅</el-tag>
               <el-tag type="success">辟邪玉✅</el-tag>
               <br/>
-              不包括：<br/>
+              - 不包括：<br/>
               <el-tag type="danger">武器❌</el-tag>
               <el-tag type="danger">婚戒❌</el-tag>
               <el-tag type="danger">名称装饰卡❌</el-tag>
               <el-tag type="danger">角色自身加成❌</el-tag>
               <br/>
-              常见的凑攻速手段都列在左边，对着抠就行<br/>
+              - 常见的凑攻速手段都列在左边，对着抠就行<br/>
 
             </el-descriptions-item>
-            <el-descriptions-item label="(2)">
+
+
+            <el-descriptions-item >
               <span style="color: green; ">愿攻速鞋no显示bug！</span><br/>
             </el-descriptions-item>
-            <el-descriptions-item>
-              <el-image src="https://gldq123.com/wp-content/uploads/2022/10/frc-bd5ec0a8031828262df8bd328ce68572.png" style="width: 100%"></el-image>
 
-            </el-descriptions-item>
           </el-descriptions>
         </el-row>
 
@@ -387,7 +387,7 @@ export default {
     return {
 
       "preset": {
-        "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
+        "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰强，50冰抗"}, {"name": "猎龙", "value": 0.08},
           {"name": "自由之翼", "value": 0.3, "desc": "火强"},
           {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "!!!!️自身异常触发!!!!️"}, {"name": "其他", "value": 0}],
         "shoulderSticker": [{"name": "冰花", "value": 0.03}, {"name": "其他", "value": 0}],
