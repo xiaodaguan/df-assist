@@ -273,7 +273,7 @@
         <el-row>
 
           <el-descriptions column="1">
-            <el-descriptions-item label="(1) 攻速鞋说明(图片来自无名空岛)：">
+            <el-descriptions-item label="(1) 攻速鞋说明">
               <br/>
               包括：<br/>
               <el-tag>防具</el-tag>
@@ -295,7 +295,7 @@
               <span style="color: green; ">愿攻速鞋no显示bug！</span><br/>
             </el-descriptions-item>
             <el-descriptions-item>
-              <el-image src="/shoes.png" style="width: 100%"></el-image>
+              <el-image src="https://gldq123.com/wp-content/uploads/2022/10/frc-bd5ec0a8031828262df8bd328ce68572.png" style="width: 100%"></el-image>
 
             </el-descriptions-item>
           </el-descriptions>
