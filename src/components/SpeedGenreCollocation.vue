@@ -15,7 +15,7 @@
     <el-row>
       <!-- 左：结果 -->
       <el-col :span="4">
-        <el-affix :offset="120">
+        <el-affix >
           <el-row>
             <el-result v-show="getSum()>=140" :title="getSum()+'%'" sub-title="合计攻速" icon="success"></el-result>
             <el-result v-show="getSum()<140" :title="getSum()+'%'" sub-title="合计攻速" icon="error"></el-result>
@@ -35,7 +35,7 @@
       </el-col>
 
       <!-- 中：主体 -->
-      <el-col :span="16">
+      <el-col :span="15">
         <el-form :model="form">
           <el-divider>防具</el-divider>
           <el-form-item label="肩膀">
@@ -47,6 +47,23 @@
               </el-radio-button>
             </el-radio-group>
           </el-form-item>
+
+          <el-timeline>
+            <el-timeline-item>
+              <el-form-item label="肩膀贴膜(巴卡尼版本)" size="small">
+                <el-radio-group v-model="form.shoulderSticker" disabled="true">
+                  <el-radio-button v-for="item in preset.shoulderSticker" :label="item.value">
+                    {{ item.name }}
+                    <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                    [{{ item.value * 100 }}%]
+                  </el-radio-button>
+                </el-radio-group>
+              </el-form-item>
+
+            </el-timeline-item>
+          </el-timeline>
+
+
           <el-form-item label="胸">
             <el-radio-group v-model="form.coat">
               <el-radio-button v-for="item in preset.coat" :label="item.value">
@@ -76,8 +93,23 @@
                 [{{ item.value * 100 }}%]
               </el-radio-button>
             </el-radio-group>
-
           </el-form-item>
+
+          <el-timeline>
+            <el-timeline-item>
+              <el-form-item label="下装贴膜(巴卡尼版本)" size="small">
+                <el-radio-group v-model="form.trousersSticker" disabled="true">
+                  <el-radio-button v-for="item in preset.trousersSticker" :label="item.value">
+                    {{ item.name }}
+                    <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                    [{{ item.value * 100 }}%]
+                  </el-radio-button>
+                </el-radio-group>
+              </el-form-item>
+
+            </el-timeline-item>
+          </el-timeline>
+
 
           <el-form-item label="鞋">
             <el-radio-group v-model="form.shoes">
@@ -268,6 +300,9 @@
         </el-form>
       </el-col>
 
+      <el-col :span="1">
+
+      </el-col>
       <!-- 右 -->
       <el-col :span="4">
         <el-row>
@@ -276,18 +311,23 @@
             <el-descriptions-item label="(1) 攻速鞋说明">
               <br/>
               包括：<br/>
-              <el-tag>防具</el-tag>
-              <el-tag>首饰</el-tag>
-              <el-tag>特殊装备</el-tag>
-              <el-tag>时装(武器装扮)</el-tag>
-              <el-tag>徽章</el-tag>
-              <el-tag>宠物(宠物装备)</el-tag>
-              <el-tag>守护珠</el-tag>
-              <el-tag>称号</el-tag>
-              <el-tag>快捷栏装备</el-tag>
-              <el-tag>辟邪玉</el-tag>
+              <el-tag type="success">防具✅</el-tag>
+              <el-tag type="success">首饰✅</el-tag>
+              <el-tag type="success">特殊装备✅</el-tag>
+              <el-tag type="success">时装(武器装扮)✅</el-tag>
+              <el-tag type="success">徽章✅</el-tag>
+              <el-tag type="success">宠物(宠物装备)✅</el-tag>
+              <el-tag type="success">守护珠✅</el-tag>
+              <el-tag type="success">称号✅</el-tag>
+              <el-tag type="success">快捷栏装备✅</el-tag>
+              <el-tag type="success">辟邪玉✅</el-tag>
               <br/>
-              <span style="color: red; ">角色自带的不算，buff不算，武器也不算</span><br/>
+              不包括：<br/>
+              <el-tag type="danger">武器❌</el-tag>
+              <el-tag type="danger">婚戒❌</el-tag>
+              <el-tag type="danger">名称装饰卡❌</el-tag>
+              <el-tag type="danger">角色自身加成❌</el-tag>
+              <br/>
               常见的凑攻速手段都列在左边，对着抠就行<br/>
 
             </el-descriptions-item>
@@ -316,9 +356,11 @@ export default {
     getSum() {
       return Number(Number(
           Number(this.form.shoulder)
+          + Number(this.form.shoulderSticker)
           + Number(this.form.coat)
           + Number(this.form.belt)
           + Number(this.form.trousers)
+          + Number(this.form.trousersSticker)
           + Number(this.form.shoes)
           + Number(this.form.bracelet)
           + Number(this.form.necklace)
@@ -348,6 +390,7 @@ export default {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
           {"name": "自由之翼", "value": 0.3, "desc": "火强"},
           {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "!!!!️自身异常触发!!!!️"}, {"name": "其他", "value": 0}],
+        "shoulderSticker": [{"name": "冰花", "value": 0.03}, {"name": "其他", "value": 0}],
         "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
@@ -355,12 +398,13 @@ export default {
           {"name": "深潜30速+8速", "value": 0.38}, {"name": "其他", "value": 0}],
         "trousers": [{"name": "机械装甲", "value": 0.2, "desc": "+10"}, {"name": "机械装甲", "value": 0.22, "desc": "+11"},
           {"name": "机械装甲", "value": 0.24, "desc": "+12"}, {"name": "梵塔", "value": 0.38, "desc": "基础流"}, {"name": "其他", "value": 0}],
+        "trousersSticker": [{"name": "暴食", "value": 0.08}, {"name": "其他", "value": 0}],
         "shoes": 0,
         "bracelet": [{"name": "收获之手｜动力导航包", "value": 0.08}, {"name": "恩特30速", "value": 0.3}, {"name": "恩特30速+8速", "value": 0.38},
           {"name": "其他", "value": 0}],
         "necklace": [{"name": "原子核", "value": 0.15, "desc": "250+属强"}, {"name": "脉冲", "value": 0.5},
           {"name": "黯星｜骑士", "value": 0.2, "desc": "半血｜前冲3秒"}, {"name": "其他", "value": 0}],
-        "ring": [{"name": "双音1", "value": 0.08, "desc": "吃1球"}, {"name": "双音2", "value": 0.16, "desc": "吃2球"},
+        "ring": [{"name": "双音1｜炽热的渴望之证", "value": 0.08, "desc": "吃1球"}, {"name": "双音2", "value": 0.16, "desc": "吃2球"},
           {"name": "双音3", "value": 0.24, "desc": "吃3球"}, {"name": "其他", "value": 0}],
         "auxiliary": [{"name": "光学眼镜｜挖掘机", "value": 0.05, "desc": "品级900｜1层"}, {"name": "挖掘机", "value": 0.15, "desc": "3层"},
           {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
@@ -387,9 +431,11 @@ export default {
       },
       "form": {
         "shoulder": 0,
+        "shoulderSticker": 0,
         "coat": 0.08,
         "belt": 0.45,
         "trousers": 0.2,
+        "trousersSticker": 0,
         "shoes": 0,
         "bracelet": 0,
         "necklace": 0.15,
@@ -414,9 +460,11 @@ export default {
       },
       "pre1": {
         "shoulder": 0,
+        "shoulderSticker": 0,
         "coat": 0.08,
         "belt": 0.45,
         "trousers": 0.24,
+        "trousersSticker": 0,
         "shoes": 0,
         "bracelet": 0,
         "necklace": 0.15,
@@ -441,9 +489,11 @@ export default {
       },
       "pre2": {
         "shoulder": 0,
+        "shoulderSticker": 0,
         "coat": 0.08,
         "belt": 0.45,
         "trousers": 0.2,
+        "trousersSticker": 0,
         "shoes": 0,
         "bracelet": 0,
         "necklace": 0.15,
