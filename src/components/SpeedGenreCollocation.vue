@@ -2,29 +2,41 @@
 
   <div>
 
+    <!-- 第一行：说明 -->
     <el-row>
-      <el-col :span="4">
-        <div>
+      <el-descriptions title="">
+        <el-descriptions-item>
+          有啥意见建议，可以到C站留言给我 &#128540; ...<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">传送门</a>
+        </el-descriptions-item>
+      </el-descriptions>
+    </el-row>
 
-          <el-affix :offset="120">
+    <!-- 第二行：内容 -->
+    <el-row>
+      <!-- 左：结果 -->
+      <el-col :span="4">
+        <el-affix :offset="120">
+          <el-row>
             <el-result v-show="getSum()>=140" :title="getSum()+'%'" sub-title="合计攻速" icon="success"></el-result>
             <el-result v-show="getSum()<140" :title="getSum()+'%'" sub-title="合计攻速" icon="error"></el-result>
-          </el-affix>
-        </div>
+          </el-row>
+
+          <el-row>
+            <p>快速选择：</p>
+          </el-row>
+          <el-row>
+            <el-button @click="this.form = this.pre1">双尊 龙袍 红12 升级武器装扮</el-button>
+            <br/>
+            <el-button @click="this.form = this.pre2">稀有天空 红10 克隆武器装扮</el-button>
+          </el-row>
+        </el-affix>
+
 
       </el-col>
-      <el-col :span="20">
 
+      <!-- 中：主体 -->
+      <el-col :span="16">
         <el-form :model="form">
-          <el-descriptions title="">
-            <el-descriptions-item>
-              有啥意见建议，可以到C站留言给我 &#128540; ...<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">传送门</a>
-            </el-descriptions-item>
-          </el-descriptions>
-
-          <el-button @click="this.form = pre1">预设1：双尊｜龙袍+12｜玲珑攻速｜升级武器装扮</el-button>
-          <el-button @click="this.form = pre2">预设2：红10天空</el-button>
-
           <el-divider>防具</el-divider>
           <el-form-item label="肩膀">
             <el-radio-group v-model="form.shoulder">
@@ -188,7 +200,7 @@
 
           <el-form-item label="徽章">
             <el-radio-group v-model="form.badgeMode">
-              <el-radio label="1" style="display: block" border="border">
+              <el-radio label="1" style="height: 120%" border="border">
                 <el-tag type="primary">玲珑攻速<font size="1">[2%]</font></el-tag> &nbsp; x &nbsp;
                 <el-input-number v-model="form.exquisiteBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
                 <el-tag type="primary">灿烂攻速<font size="1">[1.5%]</font></el-tag> &nbsp; x &nbsp;
@@ -197,8 +209,8 @@
                 <el-input-number v-model="form.gorgeousBadgeNum" :min="0" :max="10"></el-input-number> &nbsp;
               </el-radio>
               <br/>
-              <el-radio label="2" style="display: block" border="border">
-                手动输入总和：
+              <el-radio label="2" style="height: 120%" border="border">
+                <el-tag type="primary">手动输入总和：</el-tag>
                 <el-input v-model=" form.badgeTotalMan
               " style="width: 120px">
                   <template #append>%</template>
@@ -239,8 +251,8 @@
                 [{{ item.value * 100 }}%]
               </el-radio-button>
               <el-radio style="display: block" border="border">
-                手动输入：
-                <el-input v-model="form.dressUpMan" style="width: 120px">
+                <el-tag type="primary">手动输入：</el-tag>
+                <el-input v-model="form.dressUpMan" style="width: 120px; height: 95%">
                   <template #append>%</template>
                 </el-input>
               </el-radio>
@@ -256,7 +268,43 @@
         </el-form>
       </el-col>
 
+      <!-- 右 -->
+      <el-col :span="4">
+        <el-row>
+
+          <el-descriptions column="1">
+            <el-descriptions-item label="(1) 攻速鞋说明(图片来自无名空岛)：">
+              <br/>
+              包括：<br/>
+              <el-tag>防具</el-tag>
+              <el-tag>首饰</el-tag>
+              <el-tag>特殊装备</el-tag>
+              <el-tag>时装(武器装扮)</el-tag>
+              <el-tag>徽章</el-tag>
+              <el-tag>宠物(宠物装备)</el-tag>
+              <el-tag>守护珠</el-tag>
+              <el-tag>称号</el-tag>
+              <el-tag>快捷栏装备</el-tag>
+              <el-tag>辟邪玉</el-tag>
+              <br/>
+              <span style="color: red; ">角色自带的不算，buff不算，武器也不算</span><br/>
+              常见的凑攻速手段都列在左边，对着抠就行<br/>
+
+            </el-descriptions-item>
+            <el-descriptions-item label="(2)">
+              <span style="color: green; ">愿攻速鞋no显示bug！</span><br/>
+            </el-descriptions-item>
+            <el-descriptions-item>
+              <el-image src="/shoes.png" style="width: 100%"></el-image>
+
+            </el-descriptions-item>
+          </el-descriptions>
+        </el-row>
+
+      </el-col>
+
     </el-row>
+
   </div>
 
 </template>
@@ -295,10 +343,11 @@ export default {
   },
   data() {
     return {
+
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "desc": "冰强"}, {"name": "猎龙", "value": 0.08},
           {"name": "自由之翼", "value": 0.3, "desc": "火强"},
-          {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "⚠️⚠️自身异常触发⚠️⚠️"}, {"name": "其他", "value": 0}],
+          {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "!!!!️自身异常触发!!!!️"}, {"name": "其他", "value": 0}],
         "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
@@ -317,7 +366,7 @@ export default {
           {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08}, {"name": "逆流之魂｜吞噬黑暗", "value": 0.15, "desc": "20+宠物｜不挨揍"},
           {"name": "吞噬黑暗", "value": 0.3, "desc": "挨揍"}, {"name": "其他", "value": 0}],
-        "earrings": [{"name": "战术信号弹", "value": 0.3, "desc": "⚠️⚠停手每秒-4%⚠️⚠"}, {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
+        "earrings": [{"name": "战术信号弹", "value": 0.3, "desc": "!!!停手每秒-4%!!!"}, {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
         "title": [{"name": "至尊", "value": 0.04}, {"name": "普通", "value": 0.03}],
         "pet": [{"name": "春节｜夏日(升级)", "value": 0.05}, {"name": "夏日(未升级)", "value": 0.03}, {"name": "其他", "value": 0.04},
           {"name": "无", "value": 0}],
@@ -363,7 +412,7 @@ export default {
         "dressUpMan": 16,
         "jade": 0,
       },
-      "pre1":{
+      "pre1": {
         "shoulder": 0,
         "coat": 0.08,
         "belt": 0.45,
@@ -390,7 +439,7 @@ export default {
         "dressUpMan": 16,
         "jade": 0,
       },
-      "pre2":{
+      "pre2": {
         "shoulder": 0,
         "coat": 0.08,
         "belt": 0.45,
