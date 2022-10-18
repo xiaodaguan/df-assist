@@ -2,14 +2,7 @@
 
   <div>
 
-    <!-- 第一行：说明 -->
-    <el-row>
-      <el-descriptions title="">
-        <el-descriptions-item>
-          有啥意见建议，可以到C站留言给我 &#128540; ...<a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">传送门</a>
-        </el-descriptions-item>
-      </el-descriptions>
-    </el-row>
+
 
     <!-- 第二行：内容 -->
     <el-row>
@@ -41,7 +34,7 @@
           <el-form-item label="肩膀">
             <el-radio-group v-model="form.shoulder">
               <el-radio-button v-for="item in preset.shoulder" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -53,7 +46,7 @@
               <el-form-item label="肩膀贴膜(巴卡尼版本)" size="small">
                 <el-radio-group v-model="form.shoulderSticker" disabled="true">
                   <el-radio-button v-for="item in preset.shoulderSticker" :label="item.value">
-                    {{ item.name }}
+                    <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                     <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                     [{{ item.value * 100 }}%]
                   </el-radio-button>
@@ -67,7 +60,7 @@
           <el-form-item label="胸">
             <el-radio-group v-model="form.coat">
               <el-radio-button v-for="item in preset.coat" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -77,7 +70,7 @@
           <el-form-item label="腰">
             <el-radio-group v-model="form.belt">
               <el-radio-button v-for="item in preset.belt" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -88,7 +81,7 @@
           <el-form-item label="下装">
             <el-radio-group v-model="form.trousers">
               <el-radio-button v-for="item in preset.trousers" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -122,7 +115,7 @@
 
             <el-radio-group v-model="form.bracelet">
               <el-radio-button v-for="item in preset.bracelet" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -133,7 +126,7 @@
 
             <el-radio-group v-model="form.necklace">
               <el-radio-button v-for="item in preset.necklace" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -143,7 +136,7 @@
           <el-form-item label="戒指">
             <el-radio-group v-model="form.ring">
               <el-radio-button v-for="item in preset.ring" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -156,7 +149,7 @@
 
             <el-radio-group v-model="form.auxiliary">
               <el-radio-button v-for="item in preset.auxiliary" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -169,7 +162,7 @@
 
             <el-radio-group v-model="form.magicStone">
               <el-radio-button v-for="item in preset.magicStone" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -180,7 +173,7 @@
           <el-form-item label="耳环">
             <el-radio-group v-model="form.earrings">
               <el-radio-button v-for="item in preset.earrings" :label="item.value">
-                {{ item.name }}
+                <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
                 [{{ item.value * 100 }}%]
               </el-radio-button>
@@ -308,7 +301,7 @@
         <el-row>
 
           <el-descriptions column="1">
-            <el-descriptions-item label="攻速鞋说明">
+            <el-descriptions-item label="# 攻速鞋说明">
               <el-image src="https://gldq123.com/wp-content/uploads/2022/10/frc-bd5ec0a8031828262df8bd328ce68572.png" style="width: 100%"></el-image>
               <br/>
               - 包括：<br/>
@@ -329,13 +322,11 @@
               <el-tag type="danger">名称装饰卡❌</el-tag>
               <el-tag type="danger">角色自身加成❌</el-tag>
               <br/>
-              - 常见的凑攻速手段都列在左边，对着抠就行<br/>
+              - 列出了常见的凑攻速手段，对着抠就行<br/>
+              - <span style="color:darkred">部分装备有触发条件，注意橙色字体！</span><br/>
+              <span style="color: green; ">- 愿攻速鞋no显示bug！</span><br/>
+              - <a href="https://bbs.colg.cn/thread-8613292-1-1.html" target="_blank">有啥意见建议，可以到C站留言给我 &#128540; ...</a>
 
-            </el-descriptions-item>
-
-
-            <el-descriptions-item >
-              <span style="color: green; ">愿攻速鞋no显示bug！</span><br/>
             </el-descriptions-item>
 
           </el-descriptions>
@@ -387,30 +378,42 @@ export default {
     return {
 
       "preset": {
-        "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰强，50冰抗"}, {"name": "猎龙", "value": 0.08},
-          {"name": "自由之翼", "value": 0.3, "desc": "火强"},
-          {"name": "隐匿之光｜冰玉之蚀｜电磁搜索者｜沙漠星芒", "value": 0.05, "desc": "!!!!️自身异常触发!!!!️"}, {"name": "其他", "value": 0}],
+        "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰抗50+"},
+          {"name": "猎龙", "value": 0.08},
+          {"name": "自由之翼", "hasConditionSpeed": 1, "value": 0.3, "desc": "火强，领主/稀有进入灼伤"},
+          {"name": "隐匿之光(血）｜冰玉之蚀(毒)｜电磁搜索者(电)｜沙漠星芒(灼)", "hasConditionSpeed": 1, "value": 0.05, "desc": "自身进入对应异常"},
+          {"name": "其他", "value": 0}],
         "shoulderSticker": [{"name": "冰花", "value": 0.03}, {"name": "其他", "value": 0}],
-        "coat": [{"name": "大地馈赠", "value": 0.1, "desc": "火强"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
+        "coat": [{"name": "大地馈赠", "hasConditionSpeed": 1, "value": 0.1, "desc": "火抗50+"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
           {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
-        "belt": [{"name": "星灭光离(满)", "value": 0.45, "desc": "99+火抗"}, {"name": "星灭光离(8)", "value": 0.4, "desc": "88+火抗"},
-          {"name": "星灭光离(7)", "value": 0.35, "desc": "77+火抗"}, {"name": "星灭光离(6)|深潜30速", "value": 0.3, "desc": "66+火抗"},
+        "belt": [{"name": "星灭光离(满)", "hasConditionSpeed": 1, "value": 0.45, "desc": "99+火抗"},
+          {"name": "星灭光离(8)", "hasConditionSpeed": 1, "value": 0.4, "desc": "88+火抗"},
+          {"name": "星灭光离(7)", "hasConditionSpeed": 1, "value": 0.35, "desc": "77+火抗"},
+          {"name": "星灭光离(6)|深潜30速", "hasConditionSpeed": 1, "value": 0.3, "desc": "66+火抗"},
           {"name": "深潜30速+8速", "value": 0.38}, {"name": "其他", "value": 0}],
-        "trousers": [{"name": "机械装甲", "value": 0.2, "desc": "+10"}, {"name": "机械装甲", "value": 0.22, "desc": "+11"},
-          {"name": "机械装甲", "value": 0.24, "desc": "+12"}, {"name": "梵塔", "value": 0.38, "desc": "基础流"}, {"name": "其他", "value": 0}],
+        "trousers": [{"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.2, "desc": "+10"},
+          {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.22, "desc": "+11"},
+          {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.24, "desc": "+12"},
+          {"name": "梵塔", "hasConditionSpeed": 1, "value": 0.38, "desc": "攻击触发，10%*3(CD0.1，持续5)"}, {"name": "其他", "value": 0}],
         "trousersSticker": [{"name": "暴食", "value": 0.08}, {"name": "其他", "value": 0}],
         "shoes": 0,
         "bracelet": [{"name": "收获之手｜动力导航包", "value": 0.08}, {"name": "恩特30速", "value": 0.3}, {"name": "恩特30速+8速", "value": 0.38},
           {"name": "其他", "value": 0}],
-        "necklace": [{"name": "原子核", "value": 0.15, "desc": "250+属强"}, {"name": "脉冲", "value": 0.5},
-          {"name": "黯星｜骑士", "value": 0.2, "desc": "半血｜前冲3秒"}, {"name": "其他", "value": 0}],
-        "ring": [{"name": "双音1｜炽热的渴望之证", "value": 0.08, "desc": "吃1球"}, {"name": "双音2", "value": 0.16, "desc": "吃2球"},
-          {"name": "双音3", "value": 0.24, "desc": "吃3球"}, {"name": "其他", "value": 0}],
-        "auxiliary": [{"name": "光学眼镜｜挖掘机", "value": 0.05, "desc": "品级900｜1层"}, {"name": "挖掘机", "value": 0.15, "desc": "3层"},
-          {"name": "挖掘机", "value": 0.25, "desc": "5层"}, {"name": "生命的喘息", "value": 0.08}, {"name": "其他", "value": 0}],
-        "magicStone": [{"name": "诅咒之心", "value": 0.08}, {"name": "逆流之魂｜吞噬黑暗", "value": 0.15, "desc": "20+宠物｜不挨揍"},
-          {"name": "吞噬黑暗", "value": 0.3, "desc": "挨揍"}, {"name": "其他", "value": 0}],
-        "earrings": [{"name": "战术信号弹", "value": 0.3, "desc": "!!!停手每秒-4%!!!"}, {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
+        "necklace": [{"name": "原子核", "hasConditionSpeed": 1, "value": 0.15, "desc": "250+属强"},
+          {"name": "脉冲", "hasConditionSpeed": 1, "value": 0.5, "desc": "每攻击5次，5%*10(持续30)"},
+          {"name": "黯星｜骑士", "hasConditionSpeed": 1, "value": 0.2, "desc": "半血｜前冲3秒"}, {"name": "其他", "value": 0}],
+        "ring": [{"name": "双音1｜炽热的渴望之证", "hasConditionSpeed": 1, "value": 0.08, "desc": "吃1球"},
+          {"name": "双音2", "hasConditionSpeed": 1, "value": 0.16, "desc": "吃2球"},
+          {"name": "双音3", "hasConditionSpeed": 1, "value": 0.24, "desc": "吃3球"}, {"name": "其他", "value": 0}],
+        "auxiliary": [{"name": "光学眼镜｜挖掘机", "hasConditionSpeed": 1, "value": 0.05, "desc": "品级900｜1层，施放技能(持续10)"},
+          {"name": "挖掘机", "hasConditionSpeed": 1, "value": 0.15, "desc": "3层，施放技能(持续10)"},
+          {"name": "挖掘机", "hasConditionSpeed": 1, "value": 0.25, "desc": "5层，施放技能(持续10)"}, {"name": "生命的喘息", "value": 0.08},
+          {"name": "其他", "value": 0}],
+        "magicStone": [{"name": "诅咒之心", "value": 0.08},
+          {"name": "逆流之魂｜吞噬黑暗", "hasConditionSpeed": 1, "value": 0.15, "desc": "20+宠物｜攻击触发(CD30，持续30)"},
+          {"name": "吞噬黑暗", "hasConditionSpeed": 1, "value": 0.3, "desc": "攻击触发(CD30，持续30)，被击触发(持续30)"}, {"name": "其他", "value": 0}],
+        "earrings": [{"name": "战术信号弹", "hasConditionSpeed": 1, "value": 0.3, "desc": "攻击触发，2%*15(非攻击-2%/0.5s)"},
+          {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
         "title": [{"name": "至尊", "value": 0.04}, {"name": "普通", "value": 0.03}],
         "pet": [{"name": "春节｜夏日(升级)", "value": 0.05}, {"name": "夏日(未升级)", "value": 0.03}, {"name": "其他", "value": 0.04},
           {"name": "无", "value": 0}],
