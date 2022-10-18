@@ -380,7 +380,7 @@ export default {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰抗50+"},
           {"name": "猎龙", "value": 0.08},
-          {"name": "自由之翼", "hasConditionSpeed": 1, "value": 0.3, "desc": "火强，领主/稀有进入灼伤"},
+          {"name": "自由之翼", "hasConditionSpeed": 1, "value": 0.3, "desc": "领主/稀有进入灼伤"},
           {"name": "隐匿之光(血）｜冰玉之蚀(毒)｜电磁搜索者(电)｜沙漠星芒(灼)", "hasConditionSpeed": 1, "value": 0.05, "desc": "自身进入对应异常"},
           {"name": "其他", "value": 0}],
         "shoulderSticker": [{"name": "冰花", "value": 0.03}, {"name": "其他", "value": 0}],
