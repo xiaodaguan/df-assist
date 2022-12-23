@@ -44,7 +44,7 @@
           <el-timeline>
             <el-timeline-item>
               <el-form-item label="肩膀贴膜(巴卡尼版本)" size="small">
-                <el-radio-group v-model="form.shoulderSticker" disabled="true">
+                <el-radio-group v-model="form.shoulderSticker">
                   <el-radio-button v-for="item in preset.shoulderSticker" :label="item.value">
                     <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                     <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
@@ -91,7 +91,7 @@
           <el-timeline>
             <el-timeline-item>
               <el-form-item label="下装贴膜(巴卡尼版本)" size="small">
-                <el-radio-group v-model="form.trousersSticker" disabled="true">
+                <el-radio-group v-model="form.trousersSticker">
                   <el-radio-button v-for="item in preset.trousersSticker" :label="item.value">
                     {{ item.name }}
                     <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
@@ -395,7 +395,7 @@ export default {
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.22, "desc": "+11"},
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.24, "desc": "+12"},
           {"name": "梵塔", "hasConditionSpeed": 1, "value": 0.38, "desc": "攻击触发，10%*3(CD0.1，持续5)"}, {"name": "其他", "value": 0}],
-        "trousersSticker": [{"name": "暴食", "value": 0.08}, {"name": "其他", "value": 0}],
+        "trousersSticker": [{"name": "暴食", "value": 0.08, "desc": "周围存在异常状态敌人"}, {"name": "其他", "value": 0}],
         "shoes": 0,
         "bracelet": [{"name": "收获之手｜动力导航包", "value": 0.08}, {"name": "恩特30速", "value": 0.3}, {"name": "恩特30速+8速", "value": 0.38},
           {"name": "其他", "value": 0}],
