@@ -3,7 +3,6 @@
   <div>
 
 
-
     <!-- 第二行：内容 -->
     <el-row>
       <!-- 左：结果 -->
@@ -411,6 +410,7 @@ export default {
           {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08},
           {"name": "逆流之魂｜吞噬黑暗", "hasConditionSpeed": 1, "value": 0.15, "desc": "20+宠物｜攻击触发(CD30，持续30)"},
+          {"name": "和平捍卫者", "hasConditionSpeed": 1, "value": 0.2, "desc": "自身出血"},
           {"name": "吞噬黑暗", "hasConditionSpeed": 1, "value": 0.3, "desc": "攻击触发(CD30，持续30)，被击触发(持续30)"}, {"name": "其他", "value": 0}],
         "earrings": [{"name": "战术信号弹", "hasConditionSpeed": 1, "value": 0.3, "desc": "攻击触发，2%*15(非攻击-2%/0.5s)"},
           {"name": "冰晶", "value": 0.08}, {"name": "其他", "value": 0}],
