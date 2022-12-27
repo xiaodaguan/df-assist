@@ -314,11 +314,11 @@
               <el-tag type="success">称号✅</el-tag>
               <el-tag type="success">快捷栏装备✅</el-tag>
               <el-tag type="success">辟邪玉✅</el-tag>
+              <el-tag type="success">名称装饰卡✅</el-tag>
               <br/>
               - 不包括：<br/>
               <el-tag type="danger">武器❌</el-tag>
               <el-tag type="danger">婚戒❌</el-tag>
-              <el-tag type="danger">名称装饰卡❌</el-tag>
               <el-tag type="danger">角色自身加成❌</el-tag>
               <br/>
               - 列出了常见的凑攻速手段，对着抠就行<br/>
