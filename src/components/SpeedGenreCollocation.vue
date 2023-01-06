@@ -379,6 +379,7 @@ export default {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰抗50+"},
           {"name": "猎龙", "value": 0.08},
+          {"name": "深潜(攻速词条)", "value": 0.2},
           {"name": "自由之翼", "hasConditionSpeed": 1, "value": 0.3, "desc": "领主/稀有进入灼伤"},
           {"name": "隐匿之光(血）｜冰玉之蚀(毒)｜电磁搜索者(电)｜沙漠星芒(灼)", "hasConditionSpeed": 1, "value": 0.05, "desc": "自身进入对应异常"},
           {"name": "其他", "value": 0}],
@@ -405,7 +406,7 @@ export default {
           {"name": "双音2", "hasConditionSpeed": 1, "value": 0.16, "desc": "吃2球"},
           {"name": "双音3", "hasConditionSpeed": 1, "value": 0.24, "desc": "吃3球"}, {"name": "其他", "value": 0}],
         "auxiliary": [{"name": "光学眼镜｜挖掘机1", "hasConditionSpeed": 1, "value": 0.05, "desc": "品级900｜1层，施放技能(持续10)"},
-          {"name": "挖掘机3｜黎明圣杯", "hasConditionSpeed": 1, "value": 0.15, "desc": "3层，施放技能(持续10)｜手搓技能触发5%*3(持续10)"},
+          {"name": "挖掘机3｜黎明圣杯|恩特(低血词条)", "hasConditionSpeed": 1, "value": 0.15, "desc": "3层，施放技能(持续10)｜手搓技能触发5%*3(持续10)｜hp<40%"},
           {"name": "挖掘机5", "hasConditionSpeed": 1, "value": 0.25, "desc": "5层，施放技能(持续10)"}, {"name": "生命的喘息", "value": 0.08},
           {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08},
