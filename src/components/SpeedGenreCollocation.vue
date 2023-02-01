@@ -35,7 +35,7 @@
               <el-radio-button v-for="item in preset.shoulder" :label="item.value">
                 <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
                 <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
-                [{{ item.value * 100 }}%]
+                [{{ (item.value * 100).toFixed(0) }}%]
               </el-radio-button>
             </el-radio-group>
           </el-form-item>
@@ -379,18 +379,25 @@ export default {
       "preset": {
         "shoulder": [{"name": "绽放的自然生命", "value": 0.1, "hasConditionSpeed": 1, "desc": "冰抗50+"},
           {"name": "猎龙", "value": 0.08},
-          {"name": "深潜(攻速词条)", "value": 0.2},
+          {"name": "深潜(20攻速词条)", "value": 0.2, "desc": "消耗无色"},
+          {"name": "深潜(20+8)", "value": 0.280, "desc": "消耗无色"},
           {"name": "自由之翼", "hasConditionSpeed": 1, "value": 0.3, "desc": "领主/稀有进入灼伤"},
           {"name": "隐匿之光(血）｜冰玉之蚀(毒)｜电磁搜索者(电)｜沙漠星芒(灼)", "hasConditionSpeed": 1, "value": 0.05, "desc": "自身进入对应异常"},
           {"name": "其他", "value": 0}],
         "shoulderSticker": [{"name": "冰花", "value": 0.03}, {"name": "其他", "value": 0}],
-        "coat": [{"name": "大地馈赠", "hasConditionSpeed": 1, "value": 0.1, "desc": "火抗50+"}, {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
-          {"name": "双面星云皮大衣", "value": 0.05}, {"name": "其他", "value": 0}],
+        "coat": [{"name": "大地馈赠", "hasConditionSpeed": 1, "value": 0.1, "desc": "火抗50+"},
+          {"name": "暗影流光｜冷静的谋略家｜蓝灵8速", "value": 0.08},
+          {"name": "双面星云皮大衣", "value": 0.05},
+          {"name": "恩特(24攻速词条)", "value": 0.24, "desc": "200属强"},
+          {"name": "恩特(24+8)", "value": 0.32, "desc": "200属强"},
+          {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "hasConditionSpeed": 1, "value": 0.45, "desc": "99+火抗"},
           {"name": "星灭光离(8)", "hasConditionSpeed": 1, "value": 0.4, "desc": "88+火抗"},
           {"name": "星灭光离(7)", "hasConditionSpeed": 1, "value": 0.35, "desc": "77+火抗"},
           {"name": "星灭光离(6)|深潜30速", "hasConditionSpeed": 1, "value": 0.3, "desc": "66+火抗"},
-          {"name": "深潜30速+8速", "value": 0.38}, {"name": "其他", "value": 0}],
+          {"name": "深潜30速+8速", "value": 0.38},
+          {"name": "动力之渊", "value": 0.08},
+          {"name": "其他", "value": 0}],
         "trousers": [{"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.2, "desc": "+10"},
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.22, "desc": "+11"},
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.24, "desc": "+12"},
