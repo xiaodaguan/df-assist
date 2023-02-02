@@ -65,21 +65,25 @@
               </el-radio-button>
             </el-radio-group>
 
-            <el-timeline>
-              <el-timeline-item>
-                <el-form-item label="上衣贴膜(巴卡尼版本)" size="small">
-                  <el-radio-group v-model="form.coatSticker">
-                    <el-radio-button v-for="item in preset.coatSticker" :label="item.value">
-                      <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
-                      <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
-                      [{{ item.value * 100 }}%]
-                    </el-radio-button>
-                  </el-radio-group>
-                </el-form-item>
-              </el-timeline-item>
-            </el-timeline>
+
 
           </el-form-item>
+
+          <el-timeline>
+            <el-timeline-item>
+              <el-form-item label="上衣贴膜(巴卡尼版本)" size="small">
+                <el-radio-group v-model="form.coatSticker">
+                  <el-radio-button v-for="item in preset.coatSticker" :label="item.value">
+                    <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
+                    <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                    [{{ item.value * 100 }}%]
+                  </el-radio-button>
+                </el-radio-group>
+              </el-form-item>
+            </el-timeline-item>
+          </el-timeline>
+
+
           <el-form-item label="腰">
             <el-radio-group v-model="form.belt">
               <el-radio-button v-for="item in preset.belt" :label="item.value">
