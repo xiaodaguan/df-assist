@@ -65,6 +65,20 @@
               </el-radio-button>
             </el-radio-group>
 
+            <el-timeline>
+              <el-timeline-item>
+                <el-form-item label="上衣贴膜(巴卡尼版本)" size="small">
+                  <el-radio-group v-model="form.coatSticker">
+                    <el-radio-button v-for="item in preset.coatSticker" :label="item.value">
+                      <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
+                      <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                      [{{ item.value * 100 }}%]
+                    </el-radio-button>
+                  </el-radio-group>
+                </el-form-item>
+              </el-timeline-item>
+            </el-timeline>
+
           </el-form-item>
           <el-form-item label="腰">
             <el-radio-group v-model="form.belt">
@@ -348,6 +362,7 @@ export default {
           Number(this.form.shoulder)
           + Number(this.form.shoulderSticker)
           + Number(this.form.coat)
+          + Number(this.form.coatSticker)
           + Number(this.form.belt)
           + Number(this.form.trousers)
           + Number(this.form.trousersSticker)
@@ -391,6 +406,7 @@ export default {
           {"name": "恩特(24攻速词条)", "value": 0.24, "desc": "200属强", "hasConditionSpeed": 1},
           {"name": "恩特(24+8)", "value": 0.32, "desc": "200属强", "hasConditionSpeed": 1},
           {"name": "其他", "value": 0}],
+        "coatSticker": [{"name": "雷光", "value": 0.16, "desc": "4名队友", "hasConditionSpeed": 1}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "hasConditionSpeed": 1, "value": 0.45, "desc": "99+火抗"},
           {"name": "星灭光离(8)", "hasConditionSpeed": 1, "value": 0.4, "desc": "88+火抗"},
           {"name": "星灭光离(7)", "hasConditionSpeed": 1, "value": 0.35, "desc": "77+火抗"},
@@ -444,6 +460,7 @@ export default {
         "shoulder": 0,
         "shoulderSticker": 0,
         "coat": 0.08,
+        "coatSticker": 0,
         "belt": 0.45,
         "trousers": 0.2,
         "trousersSticker": 0,
