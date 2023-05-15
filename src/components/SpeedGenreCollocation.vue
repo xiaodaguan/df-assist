@@ -42,7 +42,7 @@
 
           <el-timeline>
             <el-timeline-item>
-              <el-form-item label="肩膀贴膜(巴卡尼版本)" size="small">
+              <el-form-item label="肩膀贴膜" size="small">
                 <el-radio-group v-model="form.shoulderSticker">
                   <el-radio-button v-for="item in preset.shoulderSticker" :label="item.value">
                     <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
@@ -71,7 +71,7 @@
 
           <el-timeline>
             <el-timeline-item>
-              <el-form-item label="上衣贴膜(巴卡尼版本)" size="small">
+              <el-form-item label="上衣贴膜" size="small">
                 <el-radio-group v-model="form.coatSticker">
                   <el-radio-button v-for="item in preset.coatSticker" :label="item.value">
                     <span :style="{color: item.hasConditionSpeed===1?'orange':'black'}">{{ item.name }}</span>
@@ -107,7 +107,7 @@
 
           <el-timeline>
             <el-timeline-item>
-              <el-form-item label="下装贴膜(巴卡尼版本)" size="small">
+              <el-form-item label="下装贴膜" size="small">
                 <el-radio-group v-model="form.trousersSticker">
                   <el-radio-button v-for="item in preset.trousersSticker" :label="item.value">
                     {{ item.name }}
@@ -173,6 +173,20 @@
             </el-radio-group>
 
           </el-form-item>
+          <el-timeline>
+            <el-timeline-item>
+              <el-form-item label="左槽贴膜" size="small">
+                <el-radio-group v-model="form.auxiliarySticker">
+                  <el-radio-button v-for="item in preset.auxiliarySticker" :label="item.value">
+                    {{ item.name }}
+                    <font color="gray" size="1" v-show="item.desc != null">{{ item.desc }}</font>
+                    [{{ item.value * 100 }}%]
+                  </el-radio-button>
+                </el-radio-group>
+              </el-form-item>
+
+            </el-timeline-item>
+          </el-timeline>
 
           <el-form-item label="魔法石">
 
@@ -375,6 +389,7 @@ export default {
           + Number(this.form.necklace)
           + Number(this.form.ring)
           + Number(this.form.auxiliary)
+          + Number(this.form.auxiliarySticker)
           + Number(this.form.magicStone)
           + Number(this.form.earrings)
           + Number(this.form.title)
@@ -409,6 +424,7 @@ export default {
           {"name": "双面星云皮大衣", "value": 0.05},
           {"name": "恩特(24攻速词条)", "value": 0.24, "desc": "200属强", "hasConditionSpeed": 1},
           {"name": "恩特(24+8)", "value": 0.32, "desc": "200属强", "hasConditionSpeed": 1},
+          // {"name": "恩特(30+8)", "value": 0.38, "desc": "250属强?", "hasConditionSpeed": 1},
           {"name": "其他", "value": 0}],
         "coatSticker": [{"name": "雷光", "value": 0.16, "desc": "4名队友", "hasConditionSpeed": 1}, {"name": "其他", "value": 0}],
         "belt": [{"name": "星灭光离(满)", "hasConditionSpeed": 1, "value": 0.45, "desc": "99+火抗"},
@@ -422,7 +438,7 @@ export default {
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.22, "desc": "+11"},
           {"name": "机械装甲", "hasConditionSpeed": 1, "value": 0.24, "desc": "+12"},
           {"name": "梵塔", "hasConditionSpeed": 1, "value": 0.38, "desc": "攻击触发，10%*3(CD0.1，持续5)"}, {"name": "其他", "value": 0}],
-        "trousersSticker": [{"name": "暴食", "value": 0.08, "desc": "周围存在异常状态敌人"}, {"name": "其他", "value": 0}],
+        "trousersSticker": [{"name": "猎食", "value": 0.08, "desc": "周围存在异常状态敌人"}, {"name": "其他", "value": 0}],
         "shoes": 0,
         "bracelet": [{"name": "收获之手｜动力导航包", "value": 0.08}, {"name": "恩特30速", "value": 0.3}, {"name": "恩特30速+8速", "value": 0.38},
           {"name": "其他", "value": 0}],
@@ -436,6 +452,7 @@ export default {
           {"name": "挖掘机3｜黎明圣杯|恩特(低血词条)", "hasConditionSpeed": 1, "value": 0.15, "desc": "3层，施放技能(持续10)｜手搓技能触发5%*3(持续10)｜hp<40%"},
           {"name": "挖掘机5", "hasConditionSpeed": 1, "value": 0.25, "desc": "5层，施放技能(持续10)"}, {"name": "生命的喘息", "value": 0.08},
           {"name": "其他", "value": 0}],
+        "auxiliarySticker": [{"name": "罪恶支配", "value": 0.04}, {"name": "其他", "value": 0}],
         "magicStone": [{"name": "诅咒之心", "value": 0.08},
           {"name": "逆流之魂｜吞噬黑暗", "hasConditionSpeed": 1, "value": 0.15, "desc": "20+宠物｜攻击触发(CD30，持续30)"},
           {"name": "和平捍卫者", "hasConditionSpeed": 1, "value": 0.2, "desc": "自身出血"},
@@ -473,6 +490,7 @@ export default {
         "necklace": 0.15,
         "ring": 0,
         "auxiliary": 0.05,
+        "auxiliarySticker": 0,
         "magicStone": 0.08,
         "earrings": 0,
         "title": 0.03,
